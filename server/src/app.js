@@ -5,6 +5,7 @@ const morgan = require("morgan");
 const healthRouter = require("./routes/health.routes");
 const authRouter = require("./routes/auth.routes");
 const usersRouter = require("./routes/users.routes");
+const serviceRouter = require("./routes/serviceRoutes");
 
 const app = express();
 
@@ -17,6 +18,7 @@ app.use(morgan("dev"));
 app.use("/api/health", healthRouter);
 app.use("/api/auth", authRouter);
 app.use("/api/users", usersRouter);
+app.use("/api/services", serviceRouter);
 
 // 404
 app.use((req, res) => {

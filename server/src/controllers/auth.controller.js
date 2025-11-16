@@ -3,11 +3,16 @@ const jwt = require("jsonwebtoken");
 
 // helper to create JWT
 function generateToken(user) {
-  return jwt.sign(
-    { id: user._id, role: user.role },
-    process.env.JWT_SECRET,
-    { expiresIn: "7d" }
-  );
+  const payload = { id: user._id, role: user.role };
+
+  // Prefer RSA (RS256) if keys are provided (more secure for production)
+  if (process.env.JWT_PRIVATE_KEY) {
+    const privateKey = process.env.JWT_PRIVATE_KEY.replace(/\\n/g, "\n");
+    return jwt.sign(payload, privateKey, { algorithm: "RS256", expiresIn: "7d" });
+  }
+
+  // Fallback to HMAC (HS256)
+  return jwt.sign(payload, process.env.JWT_SECRET, { algorithm: "HS256", expiresIn: "7d" });
 }
 
 // register
