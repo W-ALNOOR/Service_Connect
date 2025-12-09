@@ -33,6 +33,7 @@
   letter-spacing: 3px;
   color: #ff2975; /* Pink from your logo */
   text-transform: uppercase;
+  font-size: clamp(2rem, 3vw, 4rem);
 }
 
 /* === Tagline === */
