@@ -27,8 +27,6 @@ app.use('/api/services', serviceRouter);
 app.use('/api/bookings', bookingRouter);
 
 // 404
-app.use((req, res) => {
-  res.status(404).json({ error: 'Not found' });
-});
+
 
 module.exports = app;

@@ -1,0 +1,5 @@
+C:\Centennial\COMP229-WebDevelopmentFall2025\service_connect\server\dist
+
+server\dist\index.html
+
+C:\Centennial\COMP229-WebDevelopmentFall2025\service_connect\server\server.js
