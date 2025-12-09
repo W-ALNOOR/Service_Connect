@@ -28,6 +28,8 @@ export default function Home() {
         Connecting People • Connecting Services • Empowering Communities
       </p>
 
+      <p className="tagline">This is the CI/CD update test.</p>
+
       <div className='cta-buttons'>
         <a href='/services' className='btn-main'>
           Explore Services
